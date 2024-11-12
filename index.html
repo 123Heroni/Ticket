@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Ticklet</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="head">
+        <h1>Event Registration.</h1>
+      </div>
+      <div class="form">
+        <form action="get" id="paymentForm">
+          <label for="fullName"> Full Name </label>
+          <input type="text" name="fullName" id="fullName" autocomplete="on"/>
+
+          <label for="email"> Email </label>
+          <input type="email" name="email" id="email" autocomplete="on"/>
+
+          <label for="event"> Choose Event </label>
+          <select name="event" id="event">
+            <option value="">--- Select an Event ---</option>
+            <option
+              value="event1"
+              data-price="15000"
+              data-location="Eko-Hotel"
+              data-date="2024-10-05"
+            >
+              Google Developer Orientation - #15,000
+            </option>
+            <option
+              value="event2"
+              data-price="10000"
+              data-location="Tafawa Balewa Square"
+              data-date="2024-11-05"
+            >
+              Davido Live Concert - #10,000
+            </option>
+            <option
+              value="event1"
+              data-price="20000"
+              data-location="Eko-Hotel"
+              data-date="2024-12-05"
+            >
+              Jason Benson Mentorship Session - #20,000
+            </option>
+          </select>
+
+          <button type="button" onclick="payWithPaystack()">Pay</button>
+        </form>
+      </div>
+
+      <div class="qrcode">
+        <p>Your Ticket.</p>
+        <span>
+          Your Ticket will generated as a QRCode and can only be used
+          once!</span>
+       
+      </div>
+      <div id="qrcode"></div>
+  </div>
+    </div>
+    
+    <script src    ="https://js.paystack.co/v1/inline.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <script src="scripts.js"></script>
+  </body>
+</html>
